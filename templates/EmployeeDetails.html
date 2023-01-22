@@ -1,0 +1,86 @@
+{% extends 'Home.html' %}
+
+{% block ForNav %}
+
+<div class="container">
+
+    <!-- Form below -->
+    <form action="/services/employeedetails/" class="row" method="POST">
+        {% csrf_token %}
+        <div class="col-sm-12 col-md-3 col-4-lg py-2">
+            <label class="col-form-label"><strong>Check Employee Status</strong></label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-4-lg py-2">
+            <input class="form-control" id="searchemployee" name="searchemployee" placeholder="Search Here" required
+                   type="text">
+        </div>
+        <div class="col-sm-12 col-md-3 col-4-lg py-2">
+            <button class="btn btn-primary mb-3 px-2" type="submit">Check Here</button>
+        </div>
+    </form>
+
+    <!--    Result Here-->
+    <!--    By Card No-->
+    {% for i in cardno %}
+    <h5>Name: <span style="color:blue">{{i.NAME}}</span></h5>
+    <h5>Emp Code: <span style="color:blue">{{i.Emp_Code}}</span></h5>
+    <h5>Card No: <span style="color:blue">{{i.CARDNO}}</span></h5>
+    <h5>Date of Joining: <span style="color:blue">{{i.DOJ}}</span></h5>
+    <h5>Department: <span style="color:blue">{{i.DEPARTMENT}}</span></h5>
+    <h5>Sub-department: <span style="color:blue">{{i.SUBDEPT}}</span></h5>
+    <h5>Designation: <span style="color:blue">{{i.DEISG}}</span></h5>
+    <h5>Batch: <span style="color:blue">{{i.Batch}}</span></h5>
+    <h5>Line: <span style="color:blue">{{i.Line}}</span></h5>
+    <h5>UAN No: <span style="color:blue">{{i.PF_UAN_NO}}</span></h5>
+    <h5>ESIC No: <span style="color:blue">{{i.ESINO}}</span></h5>
+    {% endfor %}
+
+    <!--    By Emp Code-->
+    {% for i in empcode %}
+    <h5>Name: <span style="color:blue">{{i.NAME}}</span></h5>
+    <h5>Emp Code: <span style="color:blue">{{i.Emp_Code}}</span></h5>
+    <h5>Card No: <span style="color:blue">{{i.CARDNO}}</span></h5>
+    <h5>Date of Joining: <span style="color:blue">{{i.DOJ}}</span></h5>
+    <h5>Department: <span style="color:blue">{{i.DEPARTMENT}}</span></h5>
+    <h5>Sub-department: <span style="color:blue">{{i.SUBDEPT}}</span></h5>
+    <h5>Designation: <span style="color:blue">{{i.DEISG}}</span></h5>
+    <h5>Batch: <span style="color:blue">{{i.Batch}}</span></h5>
+    <h5>Line: <span style="color:blue">{{i.Line}}</span></h5>
+    <h5>UAN No: <span style="color:blue">{{i.PF_UAN_NO}}</span></h5>
+    <h5>ESIC No: <span style="color:blue">{{i.ESINO}}</span></h5>
+    {% endfor %}
+
+    <!--    By ESIC Number-->
+    {% for i in esicno %}
+    <h5>Name: <span style="color:blue">{{i.NAME}}</span></h5>
+    <h5>Emp Code: <span style="color:blue">{{i.Emp_Code}}</span></h5>
+    <h5>Card No: <span style="color:blue">{{i.CARDNO}}</span></h5>
+    <h5>Date of Joining: <span style="color:blue">{{i.DOJ}}</span></h5>
+    <h5>Department: <span style="color:blue">{{i.DEPARTMENT}}</span></h5>
+    <h5>Sub-department: <span style="color:blue">{{i.SUBDEPT}}</span></h5>
+    <h5>Designation: <span style="color:blue">{{i.DEISG}}</span></h5>
+    <h5>Batch: <span style="color:blue">{{i.Batch}}</span></h5>
+    <h5>Line: <span style="color:blue">{{i.Line}}</span></h5>
+    <h5>UAN No: <span style="color:blue">{{i.PF_UAN_NO}}</span></h5>
+    <h5>ESIC No: <span style="color:blue">{{i.ESINO}}</span></h5>
+    {% endfor %}
+
+    <!--    By UAN Number-->
+    {% for i in uanno %}
+    <h5>Name: <span style="color:blue">{{i.NAME}}</span></h5>
+    <h5>Emp Code: <span style="color:blue">{{i.Emp_Code}}</span></h5>
+    <h5>Card No: <span style="color:blue">{{i.CARDNO}}</span></h5>
+    <h5>Date of Joining: <span style="color:blue">{{i.DOJ}}</span></h5>
+    <h5>Department: <span style="color:blue">{{i.DEPARTMENT}}</span></h5>
+    <h5>Sub-department: <span style="color:blue">{{i.SUBDEPT}}</span></h5>
+    <h5>Designation: <span style="color:blue">{{i.DEISG}}</span></h5>
+    <h5>Batch: <span style="color:blue">{{i.Batch}}</span></h5>
+    <h5>Line: <span style="color:blue">{{i.Line}}</span></h5>
+    <h5>UAN No: <span style="color:blue">{{i.PF_UAN_NO}}</span></h5>
+    <h5>ESIC No: <span style="color:blue">{{i.ESINO}}</span></h5>
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}
